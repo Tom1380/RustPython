@@ -29,7 +29,7 @@ mod tests {
         let source = String::from("print('Hello world')\n");
         let mut vm = VirtualMachine::new();
         let vars = vm.context().new_scope(None);
-        let _result = eval(&mut vm, &source, vars);
+        let _result = eval(&mut vm, &source, vars, "<unittest>");
 
         // TODO: check result?
         //assert_eq!(

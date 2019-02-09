@@ -1364,7 +1364,7 @@ mod tests {
     use rustpython_parser::parser;
     fn compile_exec(source: &str) -> CodeObject {
         let mut compiler = Compiler::new();
-        compiler.push_new_code_object(Option::None, "<module>".to_string());
+        compiler.push_new_code_object("source_path".to_string(), "<module>".to_string());
         let ast = parser::parse_program(&source.to_string()).unwrap();
         compiler.compile_program(&ast).unwrap();
         compiler.pop_code_object()
